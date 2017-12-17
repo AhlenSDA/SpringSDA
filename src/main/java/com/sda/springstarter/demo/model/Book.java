@@ -14,6 +14,10 @@ public class Book {
     private String title;
     private String author;
 
+    // no args constructor required by Spring
+    public Book() {
+    }
+
     public Book(String title, String author) {
         this.title = title;
         this.author = author;
