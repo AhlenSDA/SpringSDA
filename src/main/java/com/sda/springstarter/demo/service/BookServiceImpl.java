@@ -11,7 +11,8 @@ import java.util.List;
 @Service
 public class BookServiceImpl implements BookService {
 
-    @Autowired // injection into BookServiceImpl
+    // injection into BookServiceImpl
+    @Autowired
     private BookRepository bookRepository;
 
     @Override
