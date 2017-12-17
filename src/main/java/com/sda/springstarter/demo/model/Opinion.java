@@ -15,7 +15,8 @@ public class Opinion {
     private String nick;
     private String comment;
 
-    public Opinion(String nick, String comment) {
+    public Opinion(long id_book, String nick, String comment) {
+        this.id_book = id_book;
         this.nick = nick;
         this.comment = comment;
     }
