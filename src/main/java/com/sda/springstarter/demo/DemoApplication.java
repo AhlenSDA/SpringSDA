@@ -42,12 +42,15 @@ public class DemoApplication implements CommandLineRunner {
         shopService.saveShop(shop1);
         shopService.saveShop(shop2);
 
-        Opinion opinion1 = new Opinion("Nick1", "Comment1");
-        Opinion opinion2 = new Opinion("Nick2", "Comment2");
+        Opinion opinion1 = new Opinion(1, "Nick1", "Comment1");
+        Opinion opinion2 = new Opinion(1, "Nick2", "Comment2");
+        Opinion opinion3 = new Opinion(2, "Nick3", "Comment3");
+        Opinion opinion4 = new Opinion(2, "Nick4", "Comment4");
 
         opinionService.saveOpinion(opinion1);
         opinionService.saveOpinion(opinion2);
-
+        opinionService.saveOpinion(opinion3);
+        opinionService.saveOpinion(opinion4);
 
     }
 }
