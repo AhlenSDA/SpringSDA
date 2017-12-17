@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Opinions {
+public class Opinion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +15,7 @@ public class Opinions {
     private String nick;
     private String comment;
 
-    public Opinions(String nick, String comment) {
+    public Opinion(String nick, String comment) {
         this.nick = nick;
         this.comment = comment;
     }
