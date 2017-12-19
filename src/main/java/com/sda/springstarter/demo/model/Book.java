@@ -10,6 +10,11 @@ import java.util.List;
 @Entity
 public class Book {
 
+    /**
+     * In order to connect with H2 database type
+     * in browser localhost:8080/h2-console
+     */
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
