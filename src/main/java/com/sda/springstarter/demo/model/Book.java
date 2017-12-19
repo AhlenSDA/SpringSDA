@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 public class Book {
@@ -14,7 +16,10 @@ public class Book {
     private String title;
     private String author;
 
-    // no args constructor required by Spring
+    @OneToMany(mappedBy = "book")
+    private List<Opinion> opinions;
+
+    // no args constructor required by Spring and Hibernate
     public Book() {
     }
 

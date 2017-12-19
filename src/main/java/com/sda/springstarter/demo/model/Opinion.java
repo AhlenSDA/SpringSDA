@@ -1,6 +1,5 @@
 package com.sda.springstarter.demo.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,9 +17,9 @@ public class Opinion {
     private String nick;
     private String comment;
 
-//    @ManyToOne(cascade = CascadeType.PERSIST)
-//    @JoinColumn(name = "id_book")
-//    private Book book;
+    @ManyToOne
+    @JoinColumn(name = "id_book", nullable = false, insertable = false, updatable = false)
+    private Book book;
 
     public Opinion(long id_book, String nick, String comment) {
         this.id_book = id_book;
@@ -35,14 +34,6 @@ public class Opinion {
     public void setId_book(long id_book) {
         this.id_book = id_book;
     }
-
-//    public Book getBook() {
-//        return book;
-//    }
-//
-//    public void setBook(Book book) {
-//        this.book = book;
-//    }
 
     public long getId() {
         return id;
