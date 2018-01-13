@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
 // http://localhost:8080/books
+@RestController
 @RequestMapping("/books")
 public class BookRestController {
 
