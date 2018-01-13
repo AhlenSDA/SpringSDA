@@ -4,7 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import java.util.List;
 
 @Entity
@@ -21,8 +24,19 @@ public class Book {
     private String title;
     private String author;
 
+    @ManyToOne
+    private Author bookAuthor;
+
+    @ManyToOne
+    private Category bookCategory;
+
+    @OneToOne
+    @JoinColumn(name = "book_publisher_id")
+    private Publisher bookPublisher;
+
     @OneToMany(mappedBy = "book")
     private List<Opinion> opinions;
+
 
     // no args constructor required by Spring and Hibernate
     public Book() {

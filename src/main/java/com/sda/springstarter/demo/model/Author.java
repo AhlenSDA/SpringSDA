@@ -1,9 +1,12 @@
 package com.sda.springstarter.demo.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.Set;
 
 @Entity
 public class Author {
@@ -15,12 +18,15 @@ public class Author {
     private String lastName;
     private String name;
 
+    @OneToMany(mappedBy = "bookAuthor", cascade = CascadeType.ALL)
+    private Set<Book> books;
+
     public Author() {
     }
 
-    public Author(String address, String lastname, String name) {
+    public Author(String address, String lastName, String name) {
         this.address = address;
-        this.lastName = lastname;
+        this.lastName = lastName;
         this.name = name;
     }
 
