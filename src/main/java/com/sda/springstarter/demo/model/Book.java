@@ -18,7 +18,7 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private int id;
     private String title;
     private String author;
 
@@ -39,6 +39,13 @@ public class Book {
     public Book() {
     }
 
+    public Book(String title, Author bookAuthor, Category bookCategory, Publisher bookPublisher) {
+        this.title = title;
+        this.bookAuthor = bookAuthor;
+        this.bookCategory = bookCategory;
+        this.bookPublisher = bookPublisher;
+    }
+
     public Book(String title, String author, Author bookAuthor, Category bookCategory, Publisher bookPublisher, List<Opinion> opinions) {
         this.title = title;
         this.author = author;
@@ -52,7 +59,7 @@ public class Book {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

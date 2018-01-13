@@ -1,10 +1,13 @@
 package com.sda.springstarter.demo;
 
+import com.sda.springstarter.demo.model.Author;
 import com.sda.springstarter.demo.model.Book;
-import com.sda.springstarter.demo.model.Opinion;
-import com.sda.springstarter.demo.model.Shop;
+import com.sda.springstarter.demo.repository.AuthorRepository;
+import com.sda.springstarter.demo.service.AuthorServiceImpl;
 import com.sda.springstarter.demo.service.BookServiceImpl;
+import com.sda.springstarter.demo.service.CategoryServiceImpl;
 import com.sda.springstarter.demo.service.OpinionServiceImpl;
+import com.sda.springstarter.demo.service.PublisherServiceImpl;
 import com.sda.springstarter.demo.service.ShopServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -23,6 +26,18 @@ public class DemoApplication implements CommandLineRunner {
     @Autowired
     private OpinionServiceImpl opinionService;
 
+    @Autowired
+    private PublisherServiceImpl publisherService;
+
+    @Autowired
+    private CategoryServiceImpl categoryService;
+
+    @Autowired
+    private AuthorServiceImpl authorService;
+
+    @Autowired
+    private AuthorRepository authorRepository;
+
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
@@ -30,27 +45,15 @@ public class DemoApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-//        Book book1 = new Book("Title1", "Author1");
-//        Book book2 = new Book("Title2", "Author2");
-//
-//        bookService.saveBook(book1);
-//        bookService.saveBook(book2);
-//
-//        Shop shop1 = new Shop("Shop1", "Street1", "City1");
-//        Shop shop2 = new Shop("Shop2", "Street2", "City2");
-//
-//        shopService.saveShop(shop1);
-//        shopService.saveShop(shop2);
-//
-//        Opinion opinion1 = new Opinion(1, "Nick1", "Comment1");
-//        Opinion opinion2 = new Opinion(1, "Nick2", "Comment2");
-//        Opinion opinion3 = new Opinion(2, "Nick3", "Comment3");
-//        Opinion opinion4 = new Opinion(2, "Nick4", "Comment4");
-//
-//        opinionService.saveOpinion(opinion1);
-//        opinionService.saveOpinion(opinion2);
-//        opinionService.saveOpinion(opinion3);
-//        opinionService.saveOpinion(opinion4);
+
+    Author author = authorRepository.findById(2);
+
+    Book book = new Book();
+    book.setTitle("Java dla idiotow");
+    book.setBookAuthor(author);
+
+    bookService.saveBook(book);
+
 
     }
 }
