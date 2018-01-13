@@ -21,6 +21,9 @@ public class Opinion {
     @JoinColumn(name = "id_book", nullable = false, insertable = false, updatable = false)
     private Book book;
 
+    public Opinion() {
+    }
+
     public Opinion(long id_book, String nick, String comment) {
         this.id_book = id_book;
         this.nick = nick;
