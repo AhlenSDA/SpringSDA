@@ -42,6 +42,11 @@ public class Book {
     public Book() {
     }
 
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+    }
+
     public Book(String title, String author, Author bookAuthor, Category bookCategory, Publisher bookPublisher, List<Opinion> opinions) {
         this.title = title;
         this.author = author;
