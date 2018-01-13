@@ -52,10 +52,6 @@ public class Publisher {
         this.name = name;
     }
 
-    public Book getBook() {
-        return book;
-    }
-
     public void setBook(Book book) {
         this.book = book;
     }
