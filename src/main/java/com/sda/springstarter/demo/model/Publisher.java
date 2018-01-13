@@ -4,7 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
+import java.util.Set;
 
 @Entity
 public class Publisher {
@@ -16,13 +17,13 @@ public class Publisher {
     private String address;
     private String name;
 
-    @OneToOne(mappedBy = "bookPublisher")
-    private Book book;
+    @OneToMany(mappedBy = "bookPublisher")
+    private Set<Book> book;
 
     public Publisher() {
     }
 
-    public Publisher(String address, String name, Book book) {
+    public Publisher(String address, String name, Set<Book> book) {
         this.address = address;
         this.name = name;
         this.book = book;
@@ -52,7 +53,7 @@ public class Publisher {
         this.name = name;
     }
 
-    public void setBook(Book book) {
+    public void setBook(Set<Book> book) {
         this.book = book;
     }
 }

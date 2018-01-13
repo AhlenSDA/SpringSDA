@@ -4,10 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import java.util.List;
 
 @Entity
@@ -30,8 +28,7 @@ public class Book {
     @ManyToOne
     private Category bookCategory;
 
-    @OneToOne
-    @JoinColumn(name = "book_publisher_id")
+    @ManyToOne
     private Publisher bookPublisher;
 
     @OneToMany(mappedBy = "book")
@@ -40,11 +37,6 @@ public class Book {
 
     // no args constructor required by Spring and Hibernate
     public Book() {
-    }
-
-    public Book(String title, String author) {
-        this.title = title;
-        this.author = author;
     }
 
     public Book(String title, String author, Author bookAuthor, Category bookCategory, Publisher bookPublisher, List<Opinion> opinions) {
