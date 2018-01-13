@@ -22,9 +22,10 @@ public class Publisher {
     public Publisher() {
     }
 
-    public Publisher(String address, String name) {
+    public Publisher(String address, String name, Book book) {
         this.address = address;
         this.name = name;
+        this.book = book;
     }
 
     public long getId() {
@@ -49,6 +50,14 @@ public class Publisher {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Book getBook() {
+        return book;
+    }
+
+    public void setBook(Book book) {
+        this.book = book;
     }
 }
 

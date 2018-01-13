@@ -22,8 +22,9 @@ public class Category {
     public Category() {
     }
 
-    public Category(String name) {
+    public Category(String name, Set<Book> books) {
         this.name = name;
+        this.books = books;
     }
 
     public long getId() {
@@ -40,6 +41,14 @@ public class Category {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 }
 

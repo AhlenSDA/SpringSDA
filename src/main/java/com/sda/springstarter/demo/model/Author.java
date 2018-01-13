@@ -24,10 +24,11 @@ public class Author {
     public Author() {
     }
 
-    public Author(String address, String lastName, String name) {
+    public Author(String address, String lastName, String name, Set<Book> books) {
         this.address = address;
         this.lastName = lastName;
         this.name = name;
+        this.books = books;
     }
 
     public long getId() {
@@ -60,6 +61,14 @@ public class Author {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(Set<Book> books) {
+        this.books = books;
     }
 }
 

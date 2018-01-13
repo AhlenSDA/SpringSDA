@@ -42,9 +42,13 @@ public class Book {
     public Book() {
     }
 
-    public Book(String title, String author) {
+    public Book(String title, String author, Author bookAuthor, Category bookCategory, Publisher bookPublisher, List<Opinion> opinions) {
         this.title = title;
         this.author = author;
+        this.bookAuthor = bookAuthor;
+        this.bookCategory = bookCategory;
+        this.bookPublisher = bookPublisher;
+        this.opinions = opinions;
     }
 
     public long getId() {
@@ -69,5 +73,37 @@ public class Book {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    public Author getBookAuthor() {
+        return bookAuthor;
+    }
+
+    public void setBookAuthor(Author bookAuthor) {
+        this.bookAuthor = bookAuthor;
+    }
+
+    public Category getBookCategory() {
+        return bookCategory;
+    }
+
+    public void setBookCategory(Category bookCategory) {
+        this.bookCategory = bookCategory;
+    }
+
+    public Publisher getBookPublisher() {
+        return bookPublisher;
+    }
+
+    public void setBookPublisher(Publisher bookPublisher) {
+        this.bookPublisher = bookPublisher;
+    }
+
+    public List<Opinion> getOpinions() {
+        return opinions;
+    }
+
+    public void setOpinions(List<Opinion> opinions) {
+        this.opinions = opinions;
     }
 }
