@@ -11,6 +11,7 @@ import com.sda.springstarter.demo.service.PublisherServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +31,7 @@ public class BookRestController {
     @Autowired
     private BookServiceImpl bookService;
 
+    @CrossOrigin(value = "http://localhost:9999")
     @RequestMapping(value = "booksList", method = RequestMethod.GET)
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
