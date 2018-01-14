@@ -46,13 +46,13 @@ public class DemoApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
 
-    Author author = authorRepository.findById(2);
-
-    Book book = new Book();
-    book.setTitle("Java dla idiotow");
-    book.setBookAuthor(author);
-
-    bookService.saveBook(book);
+//    Author author = authorRepository.findById(2);
+//
+//    Book book = new Book();
+//    book.setTitle("Java dla idiotow");
+//    book.setBookAuthor(author);
+//
+//    bookService.saveBook(book);
 
 
     }

@@ -16,4 +16,13 @@ public class ExceptionHandlerAdvice {
                         "Record not found",
                         "ERROR"));
     }
+
+    @ExceptionHandler(PublisherNotFoundException.class)
+    public ResponseEntity handlerException(PublisherNotFoundException e) {
+        return ResponseEntity
+                .status(HttpStatus.NOT_FOUND)
+                .body(new ApiError(HttpStatus.NOT_FOUND,
+                        "Publisher not found",
+                        "Wrong name"));
+    }
 }

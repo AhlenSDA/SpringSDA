@@ -92,6 +92,11 @@ public class BookRestController {
         publisherService.savePublisher(publisher);
     }
 
-
+    @GetMapping(value = "getPublisher/{name}")
+    public ResponseEntity<Publisher> getPublisherByName(@PathVariable String name){
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(publisherService.getPublisherByName(name));
+    }
 
 }
