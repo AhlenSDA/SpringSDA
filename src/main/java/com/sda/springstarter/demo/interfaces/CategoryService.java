@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CategoryService {
 
-    List<Category> getAllPublishers();
+    List<Category> getAllCategory();
     void saveCategory(Category category);
 
 }
