@@ -12,6 +12,8 @@ public class ExceptionHandlerAdvice {
     public ResponseEntity handlerException(BookNotFoundException e) {
         return ResponseEntity
                 .status(HttpStatus.NOT_FOUND)
-                .body(new ApiError(HttpStatus.NOT_FOUND, "Record not found", "ERROR"));
+                .body(new ApiError(HttpStatus.NOT_FOUND,
+                        "Record not found",
+                        "ERROR"));
     }
 }

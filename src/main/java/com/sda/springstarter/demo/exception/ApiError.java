@@ -23,15 +23,15 @@ public class ApiError {
         this.errors = Arrays.asList(error);
     }
 
-    public void setStatus(HttpStatus status) {
-        this.status = status;
+    public HttpStatus getStatus() {
+        return status;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public String getMessage() {
+        return message;
     }
 
-    public void setErrors(List<String> errors) {
-        this.errors = errors;
+    public List<String> getErrors() {
+        return errors;
     }
 }
