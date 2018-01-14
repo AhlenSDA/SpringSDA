@@ -1,5 +1,6 @@
 package com.sda.springstarter.demo.service;
 
+import com.sda.springstarter.demo.exception.BookNotFoundException;
 import com.sda.springstarter.demo.interfaces.BookService;
 import com.sda.springstarter.demo.model.Book;
 import com.sda.springstarter.demo.repository.BookRepository;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookServiceImpl implements BookService {
@@ -24,7 +26,12 @@ public class BookServiceImpl implements BookService {
         bookRepository.save(book);
     }
 
-    public Book getBookById(int id){
-        return bookRepository.getBookById(id);
+    public Book getBookById(int id) {
+        Optional<Book> book = bookRepository.findBookById(id);
+        if (book.isPresent()) {
+            return book.get();
+        } else {
+            throw new BookNotFoundException(id);
+        }
     }
 }
