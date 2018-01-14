@@ -9,6 +9,8 @@ import com.sda.springstarter.demo.service.BookServiceImpl;
 import com.sda.springstarter.demo.service.CategoryServiceImpl;
 import com.sda.springstarter.demo.service.PublisherServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,12 +28,12 @@ public class BookRestController {
     @Autowired
     private BookServiceImpl bookService;
 
-    @RequestMapping(value = "books", method = RequestMethod.GET)
+    @RequestMapping(value = "booksList", method = RequestMethod.GET)
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
 
-    @RequestMapping(value = "books", method = RequestMethod.POST)
+    @RequestMapping(value = "booksList", method = RequestMethod.POST)
     public void saveBook(@RequestBody Book book) {
         bookService.saveBook(book);
     }
@@ -80,4 +82,10 @@ public class BookRestController {
     public void savePublisher(@RequestBody Publisher publisher) {
         publisherService.savePublisher(publisher);
     }
+
+    @GetMapping(value = "bookByID/{id}")
+    public Book getBookById(@PathVariable int id) {
+        return bookService.getBookById(id);
+    }
+
 }
