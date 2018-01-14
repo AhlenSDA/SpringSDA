@@ -13,6 +13,14 @@
             url: 'http://localhost:8080/books/booksList',
             success: function (result) {
                 console.log(result);
+                $.each(result, function (key, value) {
+                    console.log(key)
+                    console.log(value['title'])
+                    console.log(value['author'])
+                    $("ul").append("<li>" + value['title'] + "</li>");
+                    
+
+                });
             },
             error: function (err) {
                 console.log(err);
@@ -23,11 +31,9 @@
 
 <body>
 
-<h1>Dziala</h1>
+<ul>
+
+</ul>
 
 </body>
-
-
-
-
 </html>
