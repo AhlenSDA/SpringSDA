@@ -25,13 +25,13 @@ public class BookRestController {
     // ---------------------Books-----------------------
     @Autowired
     private BookServiceImpl bookService;
-    
-    @RequestMapping(method = RequestMethod.GET)
+
+    @RequestMapping(value = "books", method = RequestMethod.GET)
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "books", method = RequestMethod.POST)
     public void saveBook(@RequestBody Book book) {
         bookService.saveBook(book);
     }
@@ -41,12 +41,12 @@ public class BookRestController {
     @Autowired
     private AuthorServiceImpl authorService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "authors", method = RequestMethod.GET)
     public List<Author> getAllAuthors() {
         return authorService.getAllAuthors();
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "authors", method = RequestMethod.POST)
     public void saveAuthor(@RequestBody Author author) {
         authorService.saveAuthor(author);
     }
@@ -56,12 +56,12 @@ public class BookRestController {
     @Autowired
     private CategoryServiceImpl categoryService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "categories", method = RequestMethod.GET)
     public List<Category> getAllCategories() {
         return categoryService.getAllCategory();
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "categories", method = RequestMethod.POST)
     public void saveCategory(@RequestBody Category category) {
         categoryService.saveCategory(category);
     }
@@ -71,12 +71,12 @@ public class BookRestController {
     @Autowired
     private PublisherServiceImpl publisherService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "publishers", method = RequestMethod.GET)
     public List<Publisher> getAllPublishers() {
         return publisherService.getAllPublishers();
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "publishers", method = RequestMethod.POST)
     public void savePublisher(@RequestBody Publisher publisher) {
         publisherService.savePublisher(publisher);
     }
