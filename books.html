@@ -8,6 +8,16 @@
     $(document).ready(function () {
         console.log("Dziala");
 
+        $.ajax({
+            type: 'GET',
+            url: 'http://localhost:8080/books',
+            success: function (result) {
+                console.log(result);
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        })
     });
 </script>
 
