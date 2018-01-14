@@ -22,4 +22,7 @@ public class BookRestController {
         return bookService.getAllBooks();
     }
 
+    @RequestMapping(method = RequestMethod.POST)
+    
+
 }
